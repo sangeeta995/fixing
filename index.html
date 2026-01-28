@@ -1,0 +1,2573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Year of Us ✨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .moon {
+            position: fixed;
+            top: 100px;
+            right: 100px;
+            width: 120px;
+            height: 120px;
+            background: #f4f4f2;
+            border-radius: 50%;
+            box-shadow: 0 0 60px rgba(244, 244, 242, 0.8),
+                        inset -10px -10px 20px rgba(0, 0, 0, 0.1);
+            animation: moonGlow 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes moonGlow {
+            0%, 100% { box-shadow: 0 0 60px rgba(244, 244, 242, 0.8), inset -10px -10px 20px rgba(0, 0, 0, 0.1); }
+            50% { box-shadow: 0 0 100px rgba(244, 244, 242, 1), inset -10px -10px 20px rgba(0, 0, 0, 0.1); }
+        }
+
+        /* Night deepens when book is open */
+body.book-open {
+    background: linear-gradient(135deg, #0f0f1f 0%, #0b162b 50%, #081a3a 100%);
+}
+
+/* Stars glow a little more */
+body.book-open .star {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+}
+
+/* Moon glows stronger */
+body.book-open .moon {
+    box-shadow:
+        0 0 120px rgba(244, 244, 242, 1),
+        inset -10px -10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header h1 {
+            color: #fff;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .header .subtitle {
+            color: #ffd700;
+            font-size: 1.3em;
+            font-style: italic;
+        }
+.heart-container {
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.real-heart {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.real-heart:before,
+.real-heart:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #c44569 100%);
+    box-shadow: 
+        0 0 30px rgba(255, 107, 107, 0.6),
+        inset -3px -3px 10px rgba(0, 0, 0, 0.2),
+        inset 3px 3px 10px rgba(255, 255, 255, 0.3);
+}
+
+.real-heart:before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.real-heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.1); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.15); }
+    40% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+        .message-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .message-card p {
+            color: #2c3e50;
+            font-size: 1.15em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .gifts-section {
+            margin: 60px 0;
+        }
+
+        .gifts-title {
+            text-align: center;
+            color: #ffd700;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            animation: fadeIn 1s ease-out 1s both;
+        }
+
+        .gifts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .gift-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.8s ease-out both;
+            min-height: 300px;
+        }
+
+       .gift-box:nth-child(1) { animation-delay: 1.2s; }
+        .gift-box:nth-child(2) { animation-delay: 1.4s; }
+        .gift-box:nth-child(3) { animation-delay: 1.6s; }
+        .gift-box:nth-child(4) { animation-delay: 1.8s; }
+        .gift-box:nth-child(5) { animation-delay: 2.0s; }
+        .gift-box:nth-child(6) { animation-delay: 2.2s; }
+        .gift-box:nth-child(7) { animation-delay: 2.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gift-box:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.4);
+        }
+
+        .gift-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: transform 0.5s ease;
+        }
+
+        .gift-box:hover .gift-image {
+            transform: scale(1.1);
+        }
+
+        .gift-title {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .gift-preview {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .click-hint {
+            color: #e74c3c;
+            font-size: 0.95em;
+            margin-top: 15px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+     .special-gift {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0.3) 100%);
+    border: 3px solid #ffd700;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.special-gift .gift-title,
+.special-gift .gift-preview,
+.special-gift .click-hint {
+    color: #8B4513;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+        @keyframes pulse {
+            0%, 100% { border-color: #ffd700; }
+            50% { border-color: #ffed4e; box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); }
+        }
+
+        .flower-garden {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-out 2s both;
+        }
+
+        .flower {
+            font-size: 60px;
+            animation: grow 2s ease-out infinite;
+        }
+
+        .flower:nth-child(1) { animation-delay: 0s; }
+        .flower:nth-child(2) { animation-delay: 0.2s; }
+        .flower:nth-child(3) { animation-delay: 0.4s; }
+        .flower:nth-child(4) { animation-delay: 0.6s; }
+        .flower:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes grow {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(5deg); }
+        }
+
+        .promise-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 60px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(240, 147, 251, 0.4);
+            animation: fadeIn 1s ease-out 2.5s both;
+        }
+
+        .promise-box h2 {
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+
+        .promise-box p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+.red-thread-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 250, 250, 0.95) 100%);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-top: 60px;
+            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.3);
+            animation: fadeIn 1s ease-out 3.5s both;
+        }
+
+        .thread-title {
+            text-align: center;
+            color: #dc2626;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 10px rgba(220, 38, 38, 0.3);
+        }
+
+.thread-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            position: relative;
+        }
+
+        .thread-image {
+            max-width: 100%;
+            width: 600px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(220, 38, 38, 0.3);
+            animation: imageGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes imageGlow {
+            0%, 100% { 
+                box-shadow: 0 10px 40px rgba(220, 38, 38, 0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 15px 60px rgba(220, 38, 38, 0.5);
+                transform: scale(1.02);
+            }
+        }
+        .signature {
+            text-align: center;
+            margin-top: 50px;
+            color: #ffd700;
+            font-size: 1.3em;
+            font-style: italic;
+            animation: fadeIn 1s ease-out 4s both;
+        }
+
+       /* ============= BOOK MODAL STYLES ============= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    font-size: 50px;
+    color: #ffd700;
+    cursor: pointer;
+    z-index: 1001;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg) scale(1.2);
+    color: #fff;
+}
+
+.book-scene {
+    perspective: 2500px;
+    perspective-origin: center center;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+.book {
+    width: 320px;
+    height: 450px;
+    position: relative;
+    margin: 0;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    overflow: visible;
+
+}
+
+
+.ribbon {
+    width: 60px;
+    height: 25px;
+    background: linear-gradient(to bottom, #C41E3A 0%, #8B0000 50%, #C41E3A 100%);
+    position: absolute;
+    right: -60px;
+    top: 30%;
+    transform: translateY(-50%);
+    transition: all 0.6s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    z-index: 150;
+    cursor: pointer;
+    clip-path: polygon(
+        0 0,           /* top left */
+        100% 0,        /* top right */
+        70% 40%,      /* start of upper cut */
+        65% 50%,       /* center point of cut */
+        70% 60%,      /* end of lower cut */
+        100% 100%,     /* bottom right */
+        0 100%         /* bottom left */
+    );
+}
+
+
+.ribbon::before {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 12.5px solid transparent;
+    border-bottom: 12.5px solid transparent;
+    border-left: 10px solid #8B0000;
+}
+
+
+.ribbon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0, 0, 0, 0.1) 3px,
+        rgba(0, 0, 0, 0.1) 6px
+    );
+}
+.book.all-pages-turned {
+    transform: scale(0.98);
+    transition: transform 1s ease;
+}
+
+
+
+
+
+.book.all-pages-turned .ribbon {
+    right: auto;
+    left: -50px;
+    transform: translateY(-50%) rotateY(180deg);
+    transition-delay: 0.4s;
+}
+
+.ribbon-emoji {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    z-index: 1;
+    pointer-events: none;
+}
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: 
+        linear-gradient(135deg, rgba(0,0,0,0.3) 0%, transparent 50%, rgba(0,0,0,0.2) 100%),
+        linear-gradient(to bottom, #8B4513 0%, #654321 50%, #4A2511 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 80px;
+    backface-visibility: hidden;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 3px rgba(139, 69, 19, 0.4),
+        inset 0 0 50px rgba(0, 0, 0, 0.3);
+    border: 3px solid #3d1f0f;
+    overflow: visible;
+}
+.cover.front {
+    z-index: 100;
+    transform-origin: left center;
+    transition: transform 1.2s ease;
+}
+
+.book.open .cover.front {
+    transform: rotateY(-180deg);
+}
+
+.cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 2px,
+            rgba(0, 0, 0, 0.03) 4px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 2px,
+            rgba(0, 0, 0, 0.03) 4px
+        );
+    pointer-events: none;
+}
+
+.cover::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    border: 2px solid rgba(218, 165, 32, 0.4);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+
+.cover.back {
+    background: 
+        linear-gradient(135deg, rgba(0,0,0,0.3) 0%, transparent 50%, rgba(0,0,0,0.2) 100%),
+        linear-gradient(to bottom, #654321 0%, #4A2511 50%, #3d1f0f 100%);
+
+    /* KEEP HINGE */
+    transform-origin: right center;
+
+    /* HIDDEN INITIALLY */
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+
+    z-index: 0; /* IMPORTANT */
+
+    transition: transform 1s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+
+.book.all-pages-turned .cover.back {
+    transform: rotateY(0deg);
+    z-index: 300;
+}
+
+
+
+
+.cover-title {
+    font-size: 0.28em;
+    color: #DAA520;
+    margin-top: 20px;
+    font-family: 'Georgia', serif;
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(218, 165, 32, 0.3);
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#coverIcon {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #fffef9 0%, #fffbf0 100%);
+    border-radius: 15px;
+    transform-origin: left center;
+    padding: 0;
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #2c3e50;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+    backface-visibility: hidden;
+    transition: transform 1.2s ease;
+    display: block;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: rotateY(0deg) translateZ(1px);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.page::-webkit-scrollbar {
+    display: none;
+}
+.page-content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page.turn {
+    transform: rotateY(-180deg) translateZ(1px);
+}
+
+
+
+
+.book-hint {
+    color: #ffd700;
+    margin-top: 25px;
+    font-style: italic;
+    font-size: 1.3em;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    animation: pulse-hint 2s ease-in-out infinite;
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+@keyframes pulse-hint {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+.jhumka {
+    display: inline-block;
+    font-size: 40px;
+    animation: swing 2s ease-in-out infinite;
+}
+
+@keyframes swing {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+}
+
+.reasons-page {
+    padding: 30px;
+    overflow-y: auto;
+    display: block;
+}
+
+.reasons-page::-webkit-scrollbar {
+    width: 8px;
+}
+
+.reasons-page::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.reasons-page::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 4px;
+}
+
+.reason-item {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border-left: 4px solid #e74c3c;
+    text-align: left;
+}
+
+.reason-number {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 0.95em;
+    margin-bottom: 5px;
+}
+
+.reason-text {
+    color: #2c3e50;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .header h1 { font-size: 2.5em; }
+    .moon { width: 80px; height: 80px; right: 20px; top: 50px; }
+    .gifts-grid { grid-template-columns: 1fr; }
+    .book { width: 280px; height: 400px; }
+    .cover { font-size: 60px; }
+    .page { padding: 25px; font-size: 1em; }
+    .close-btn { right: 15px; top: 15px; font-size: 40px; }
+}
+.seedhe-maut-player {
+  background: linear-gradient(135deg, #1e1e1e 0%, #121212 100%);
+  color: #fff;
+  border-radius: 15px;
+  padding: 30px 25px;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  box-shadow: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Gradient overlay from album art */
+.seedhe-maut-player::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, 
+    rgba(139, 69, 19, 0.4) 0%,
+    rgba(101, 67, 33, 0.3) 30%,
+    rgba(30, 30, 30, 0.95) 70%,
+    rgba(18, 18, 18, 1) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.seedhe-maut-player > * {
+  position: relative;
+  z-index: 1;
+}
+
+.seedhe-maut-player .album-art {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.seedhe-maut-player .album-art:hover {
+  transform: scale(1.02);
+}
+
+.seedhe-maut-player .track-info {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.seedhe-maut-player .track-name {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.seedhe-maut-player .artist-name {
+  font-size: 0.95em;
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+.seedhe-maut-player .controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.seedhe-maut-player .play-btn {
+  background: linear-gradient(135deg, #1ed760 0%, #1db954 100%);
+  border: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #000;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(30, 215, 96, 0.4);
+  flex-shrink: 0;
+}
+
+.seedhe-maut-player .play-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(30, 215, 96, 0.6);
+}
+
+.seedhe-maut-player .play-btn:active {
+  transform: scale(0.98);
+}
+
+.seedhe-maut-player .progress-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.seedhe-maut-player .progress {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.seedhe-maut-player .progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease;
+}
+
+.seedhe-maut-player .progress::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.seedhe-maut-player .progress::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.seedhe-maut-player .time-display {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72em;
+  opacity: 0.5;
+  font-variant-numeric: tabular-nums;
+}
+
+.seedhe-maut-player .volume-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.seedhe-maut-player .volume-icon {
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+.seedhe-maut-player .volume {
+  width: 90px;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.seedhe-maut-player .volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.seedhe-maut-player .volume::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.song-caption {
+  font-size: 0.85em;
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 14px;
+  margin-bottom: 20px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Lyrics Container */
+/* Lyrics Container */
+.seedhe-maut-player .lyrics-wrapper {
+  transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  padding-top: 0;
+}
+
+.seedhe-maut-player .lyrics-container {
+  height: 150px;
+  overflow: hidden;
+  margin-top: 18px;
+  margin-bottom: 30px;
+  padding: 20px 18px;
+  background: linear-gradient(135deg, 
+    rgba(139, 69, 19, 0.3) 0%,
+    rgba(101, 67, 33, 0.25) 50%,
+    rgba(30, 30, 30, 0.4) 100%
+  );
+  border-radius: 12px;
+  border: 1px solid rgba(139, 69, 19, 0.3);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.seedhe-maut-player .lyrics-line {
+  text-align: center;
+  font-size: 0.95em;
+  line-height: 2.2;
+  opacity: 0.3;
+  transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  padding: 8px 0;
+  color: #fff;
+  font-weight: 400;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seedhe-maut-player .lyrics-line.active {
+  opacity: 1;
+  font-weight: 700;
+  font-size: 0.95em;
+  color: #FFFFFF;
+  transform: scale(1);
+  text-shadow: none;
+  background: transparent;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.seedhe-maut-player .lyrics-line.prev {
+  opacity: 0.5;
+  font-size: 0.9em;
+}
+
+.seedhe-maut-player .lyrics-line.next {
+  opacity: 0.4;
+  font-size: 0.88em;
+}
+
+/* Custom colors for different songs */
+.seedhe-maut-player.maina .lyrics-container {
+  background: linear-gradient(135deg, 
+    rgba(205, 164, 94, 0.35) 0%,
+    rgba(139, 90, 43, 0.3) 50%,
+    rgba(30, 30, 30, 0.5) 100%
+  );
+  border-color: rgba(205, 164, 94, 0.4);
+}
+
+.seedhe-maut-player.maina .lyrics-line.active {
+  color: #FFFFFF;
+  text-shadow: none;
+  background: transparent;
+}
+
+.seedhe-maut-player.naachne .lyrics-container {
+  background: linear-gradient(135deg, 
+    rgba(220, 38, 38, 0.35) 0%,
+    rgba(185, 28, 28, 0.3) 50%,
+    rgba(30, 30, 30, 0.5) 100%
+  );
+  border-color: rgba(220, 38, 38, 0.4);
+}
+
+.seedhe-maut-player.naachne .lyrics-line.active {
+  color: #FFFFFF;
+  text-shadow: none;
+  background: transparent;
+}
+
+.seedhe-maut-player.idmtl .lyrics-container {
+  background: linear-gradient(135deg, 
+    rgba(139, 0, 139, 0.35) 0%,
+    rgba(75, 0, 130, 0.3) 50%,
+    rgba(30, 30, 30, 0.5) 100%
+  );
+  border-color: rgba(139, 0, 139, 0.4);
+}
+
+.seedhe-maut-player.idmtl .lyrics-line.active {
+  color: #FFFFFF;
+  text-shadow: none;
+  background: transparent;
+}
+
+/* Video Page Styling */
+.video-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+}
+
+.video-header {
+    font-size: 1.5em;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+    animation: fadeIn 0.8s ease-out;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 15px 40px rgba(231, 76, 60, 0.4),
+        0 0 0 3px rgba(255, 255, 255, 0.8),
+        0 0 0 6px rgba(231, 76, 60, 0.2);
+    animation: videoGlow 2s ease-in-out infinite;
+}
+
+@keyframes videoGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 15px 40px rgba(231, 76, 60, 0.4),
+            0 0 0 3px rgba(255, 255, 255, 0.8),
+            0 0 0 6px rgba(231, 76, 60, 0.2);
+    }
+    50% { 
+        box-shadow: 
+            0 20px 60px rgba(231, 76, 60, 0.6),
+            0 0 0 3px rgba(255, 255, 255, 1),
+            0 0 0 6px rgba(231, 76, 60, 0.4);
+    }
+}
+
+.styled-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #000;
+}
+
+.video-caption {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #2c3e50;
+    text-align: center;
+    font-style: italic;
+    animation: fadeIn 1s ease-out 0.3s both;
+}
+
+@media (max-width: 768px) {
+    .video-header {
+        font-size: 1.2em;
+    }
+    
+    .video-wrapper {
+        max-width: 240px;
+    }
+    
+    .video-caption {
+        font-size: 0.95em;
+    }
+}
+#bgMusic {
+    display: none;
+}
+</style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <div class="moon"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>One Year of Us</h1>
+           <div class="heart-container">
+    <div class="real-heart"></div>
+</div>
+            <div class="subtitle">365 days of Staying and loving together💗🫂</div>
+        </div>
+
+        <div class="message-card">
+            <p>To the one who means everything to me,</p>
+            <p>Today marks <span class="highlight">one year</span> since you walked into my life and changed everything. I know we're not talking right now, and I know I'm part of the reason why. But I couldn't let this day pass without showing you how much you mean to me.</p>
+            <p>I've created something special for you, just like you're special to me. Every gift here represents a piece of my heart and the things you like...</p>
+        </div>
+
+        <div class="gifts-section">
+            <h2 class="gifts-title">✨ Your Special Gifts ✨</h2>
+            
+            <div class="gifts-grid">
+                <div class="gift-box" onclick="openBookGift('flowers')">
+                    <img src="roselily.jpg" alt="Beautiful Flowers" class="gift-image">
+                    <div class="gift-title">A Garden of Flowers </div>
+                    <div class="gift-preview">
+                        Because you love flowers and you deserve a whole garden of them...
+                    </div>
+                    <div class="click-hint">✨ Click to open your gift ✨</div>
+                </div>
+
+                <div class="gift-box" onclick="openBookGift('moon')">
+                    <img src="moon.png" alt="Moon and Stars" class="gift-image">
+                    <div class="gift-title">The Moon & Stars </div>
+                    <div class="gift-preview">
+                        You love the moon, and now it's here watching over us forever...
+                    </div>
+                    <div class="click-hint">✨ Click to open your gift ✨</div>
+                </div>
+
+                <div class="gift-box" onclick="openBookGift('jhumkas')">
+                    <img src="jhumka.jpg" alt="Beautiful Jhumkas" class="gift-image">
+                    <div class="gift-title">Jhumkas </div>
+                    <div class="gift-preview">
+                        I hope you like this gift because jhumkas are your favorite...
+                    </div>
+                    <div class="click-hint">✨ Click to open your gift ✨</div>
+                </div>
+
+             <div class="gift-box" onclick="openBookGift('reasons')">
+                    <img src="heart.jpg" alt="365 Reasons" class="gift-image">
+                    <div class="gift-title">365 Days 365 - Reasons</div>
+                    <div class="gift-preview">
+                        As its been 365 days today,Here are 365 reasons why I love you...
+                    </div>
+                    <div class="click-hint">✨ Click to open your gift ✨</div>
+                </div>
+
+                <div class="gift-box" onclick="openBookGift('seedhemaut')" style="animation-delay: 2s;">
+                    <img src="idmtl.jfif" alt="Music" class="gift-image">
+                    <div class="gift-title">Seedhe Maut Songs</div>
+                    <div class="gift-preview">
+                        You told me your favorite artist is Seedhe Maut so here are your favorite songs from them...
+                    </div>
+                    <div class="click-hint">✨ Click to open your gift ✨</div>
+                </div>
+
+                <div class="gift-box" onclick="openBookGift('favorites')" style="animation-delay: 2.2s;">
+                    <img src="donuts.jpg" alt="Your Favorites" class="gift-image">
+                    <div class="gift-title">Your Favorite sweets</div>
+                    <div class="gift-preview">
+                        I remember that you like sweets so here are some sweets for you... 😋
+                    </div>
+                    <div class="click-hint">✨ Click to open your gift ✨</div>
+                </div>
+
+                <div class="gift-box special-gift" onclick="openBookGift('surprise')" style="animation-delay: 2.4s;">
+                    <img src="surprise.png" alt="Special Surprise" class="gift-image">
+                    <div class="gift-title">Special Surprise💗</div>
+                    <div class="gift-preview">
+                        I made some special gift for you i hope you like it...
+                    </div>
+                    <div class="click-hint">✨ Click to open your gift ✨</div>
+                </div>
+            </div>
+
+            <div class="flower-garden">
+                <span class="flower">🌹</span>
+                <span class="flower">🌺</span>
+                <span class="flower">🌻</span>
+                <span class="flower">🌷</span>
+                <span class="flower">🌸</span>
+                <span class="flower">💐</span>
+            </div>
+        </div>
+
+        <div class="message-card">
+            <p>I know a website can't fix everything. I know I need to do more than just make something pretty. But I don't want this day to be passed like a normal one for my favorite person who I love with all my heart.</p>
+            <p>This past year has been the best year of my life. Every laugh, every conversation, every moment with you has been a gift. Yes, we fought. Yes, I messed up. But that doesn't erase everything we've built together.</p>
+            <p>I miss you. I miss us. I miss hearing your voice, the random things we talk about, sharing about my days with you <span class="jhumka">💫</span></p>
+        </div>
+
+        <div class="promise-box">
+            <h2>My Promise to You 💕</h2>
+            <p>I know that things are not right rn because of me, i got to know that your exams are still going on and will continue till Feb 15 and now everything you said, every single line makes sense to me. And maybe i've started to understand your perspective and you are definitively right.</p>
+            <p>This all happend during your exams time and during this time there's already stress, anxiety and other things in life and I made your work more hard by sending you so many messages and disturbing you even after you told me that you have many things to do...  Study and career comes at top in priority list</p>
+            <p>Ive realised all these things slowly... Instead of helping you with everything and supporting you in that time, i hurted you and increased more problems for you by asking so many times to fix things when you were already coping up with other things... as you said in text that apologizing doesnt make sense because this have happened 3rd time and it makes sense why you dont want to forgive me because repeating a mistake 3rd time doesnt seems like mistake but instead seems like doing it intentionally...  and i am not gonna repeat all the chaos like before again and repeat the sentences again nd again. I accept my mistake for the first and second time and i am thankfull that you forgave me for that... But for the third time i am gonna believe that you know me well and what i meant because no one understands me better than you...</p>
+            <p>I'm <b>not</b> gonna ask you to fix things immediately like before. But instead of parting ways Lets just give things some time. And this time I'm not gonna hope but i believe and pray that the same God that brought us together will keep us together forever </p>                  
+            <p>I promise to understand you and your situation first before mine, I promise to work on myself, on us, every single day. You're not just my life-partner, you're my everything, and I don't want to lose you. Please, let's not let our first year be our last year.</p>
+        </div>
+       <div class="red-thread-section">
+            <h2 class="thread-title">The Red Thread of Fate</h2>
+            <div class="thread-container">
+                <img src="string.png" alt="Red Thread of Fate" class="thread-image">
+            </div>
+            <p class="thread-message">
+                An invisible red thread connects those who are destined to meet, regardless of time, place, or circumstance. The thread may stretch or tangle, but it will never break. We are connected, always have been, always will be. 💕
+            </p>
+        </div>
+        <div class="signature">
+            <p>Forever yours, with all my heart</p>
+            <p>Happy 1st Anniversary Koko😋💕</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">P.S. - I love you more than words can say 🌙✨</p>
+        </div>
+    </div>
+
+    <!-- BOOK MODALS -->
+    <div id="bookModal" class="modal">
+        <span class="close-btn" onclick="closeBookModal()">&times;</span>
+        <div class="modal-content">
+            <div class="book-scene" id="bookScene">
+              <div class="book" id="book">
+    <div class="ribbon" id="ribbon">
+        <span class="ribbon-emoji">🎀</span>
+    </div>
+    <div class="cover front">
+        <div id="coverIcon">🌸</div>
+        <div class="cover-title" id="coverTitle">Flowers</div>
+    </div>
+    <div class="cover back">
+    </div>
+    <div id="pagesContainer"></div>
+</div>
+                
+                <div class="book-hint" id="bookHint">Click the ribbon to open the book</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       const starsContainer = document.getElementById('stars');
+for (let i = 0; i < 150; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.width = Math.random() * 3 + 1 + 'px';
+    star.style.height = star.style.width;
+    star.style.animationDelay = Math.random() * 3 + 's';
+    starsContainer.appendChild(star);
+}
+
+let currentStep = 0;
+let currentPage = 0;
+let allPages = [];
+
+const reasons = [
+    "Your smile that lights up everything",
+    "The way you laugh makes my day better",
+    "You make me want to be a better person",
+    "Your kindness touches my heart",
+    "The way you care about things",
+    "Your beautiful eyes",
+    "How you understand me",
+    "Your warmth that comforts me",
+    "The way you listen",
+    "Your infectious energy",
+    "How you make moments special",
+    "Your strength inspires me",
+    "The way you believe in me",
+    "Your unique personality",
+    "How you see things differently",
+    "Your beautiful heart",
+    "The way you make me feel loved",
+    "Your passion for life",
+    "How you brighten my days",
+    "Your amazing sense of humor",
+    "The way you express yourself",
+    "Your determination",
+    "How you make me feel safe",
+    "Your ability to make me smile",
+    "The way you share things with me",
+    "Your compassion",
+    "How you remember details",
+    "Your courage",
+    "The way you communicate",
+    "Your beautiful voice",
+    "How you inspire me daily",
+    "Your loyalty",
+    "The way you look at things",
+    "Your creativity",
+    "How you make me feel special",
+    "Your thoughtfulness",
+    "The way you care",
+    "Your sweet side",
+    "How you never give up",
+    "Your positive attitude",
+    "The way you make me laugh",
+    "Your gentleness",
+    "How you appreciate beauty",
+    "Your wisdom",
+    "The way you comfort me",
+    "Your love for flowers",
+    "How you find joy",
+    "Your beautiful soul",
+    "The way you understand",
+    "Your patience",
+    "How you challenge me",
+    "Your sweet nature",
+    "The way you celebrate with me",
+    "Your empathy",
+    "How you make things feel right",
+    "Your gorgeous presence",
+    "The way you support me",
+    "Your genuine smile",
+    "How you make life interesting",
+    "Your inner strength",
+    "The way you forgive",
+    "Your love for the moon",
+    "How you value me",
+    "Your honesty",
+    "The way you appreciate music",
+    "Your beautiful mind",
+    "How you see good in things",
+    "Your playful side",
+    "The way you make me feel alive",
+    "Your dedication",
+    "How you light up",
+    "Your caring ways",
+    "The way you motivate me",
+    "Your independence",
+    "How you inspire growth",
+    "Your confidence",
+    "The way you react",
+    "Your love for animals",
+    "How you try your best",
+    "Your respect",
+    "The way you cherish things",
+    "Your love for jhumkas",
+    "How you handle situations",
+    "Your grace",
+    "The way you prioritize",
+    "Your beautiful personality",
+    "How you stand for things",
+    "Your gentle spirit",
+    "The way you need me too",
+    "Your ambition",
+    "How you appreciate art",
+    "Your loving heart",
+    "The way you care for others",
+    "Your faith in us",
+    "How you give",
+    "Your spontaneity",
+    "The way you make days special",
+    "Your thoughtful gestures",
+    "How you remember dates",
+    "Your positive energy",
+    "The way you encourage",
+    "Your beautiful laugh",
+    "How you make me feel lucky",
+    "Your adventurous spirit",
+    "The way you express feelings",
+    "Your resilience",
+    "How you complete me",
+    "Your loving words",
+    "The way you focus",
+    "Your dedication to passions",
+    "How you value me",
+    "Your warmth",
+    "The way you show affection",
+    "Your intelligence",
+    "How you protect me",
+    "Your sparkling eyes",
+    "The way you love unconditionally",
+    "Your selflessness",
+    "How you brighten darkness",
+    "Your optimism",
+    "The way you exist",
+    "Your loyalty to us",
+    "How you accept me",
+    "Your caring words",
+    "The way you make me proud",
+    "Your beautiful presence",
+    "How you share with me",
+    "Your understanding",
+    "The way you end days",
+    "Your dreams",
+    "How you prioritize us",
+    "Your genuine care",
+    "The way you look beautiful",
+    "Your character",
+    "How you feel like home",
+    "Your sweet messages",
+    "The way you give butterflies",
+    "Your pure soul",
+    "How you make love real",
+    "Your tender heart",
+    "The way you make me feel protected",
+    "Your loving nature",
+    "How you deserve the world",
+    "Your infectious energy",
+    "The way you appreciate me",
+    "Your beautiful spirit",
+    "How you make me grateful",
+    "Your kind words",
+    "The way you bless my life",
+    "Your generous heart",
+    "How you inspire",
+    "Your gentle ways",
+    "The way you give hope",
+    "Your pure heart",
+    "How you make me feel worthy",
+    "Your loving touch",
+    "The way you adore",
+    "Your caring soul",
+    "How you bring contentment",
+    "Your sweet voice",
+    "The way you bring peace",
+    "Your beautiful essence",
+    "How you excite me about tomorrow",
+    "Your warm smile",
+    "The way you want me",
+    "Your genuine love",
+    "How you're a blessing",
+    "Your tender care",
+    "The way you secure us",
+    "Your musical laugh",
+    "How you empower me",
+    "Your support",
+    "The way you understand without words",
+    "Your radiant energy",
+    "How you make me enough",
+    "Your loving gaze",
+    "The way thoughts of you make me happy",
+    "Your beautiful being",
+    "How you bring out my best",
+    "Your compassionate words",
+    "The way you treasure me",
+    "Your loving actions",
+    "How you matter to me",
+    "Your worldview",
+    "The way you're irreplaceable",
+    "Your sweet gestures",
+    "How you're my everything",
+    "Your caring embrace",
+    "The way every day is special",
+    "Your beautiful thoughts",
+    "How you love in little ways",
+    "Your gentle kisses",
+    "The way we can overcome anything",
+    "Your beautiful dreams",
+    "How you're my main character",
+    "Your loving presence",
+    "The way time stops with you",
+    "Your beautiful perspective",
+    "How every day is a gift",
+    "Your tender moments",
+    "The way I'm your safe place",
+    "Your beautiful energy",
+    "How we're meant to be",
+    "Your caring glances",
+    "The way love is real",
+    "Your beautiful kindness",
+    "How I see forever with you",
+    "Your loving whispers",
+    "The way moments matter",
+    "Your beautiful gentleness",
+    "How you're my person",
+    "Your unchanging sweetness",
+    "The way this feels like a dream",
+    "Your beautiful compassion",
+    "How nothing else matters",
+    "Your pure loving heart",
+    "The way forever isn't enough",
+    "Your beautiful sensitivity",
+    "How you're my soulmate",
+    "Your boundless care",
+    "The way I want to protect you",
+    "Your beautiful understanding",
+    "How we're writing our story",
+    "Your calming spirit",
+    "The way you're the only one",
+    "Your beautiful patience",
+    "How our love is worth everything",
+    "Your beating heart",
+    "The way you're my world",
+    "Your completing soul",
+    "How you make sunrises beautiful",
+    "Your noticed caring",
+    "The way I'm where I belong",
+    "Your heart-filling laughter",
+    "How I could listen forever",
+    "Your healing touch",
+    "The way distance means nothing",
+    "Your soul-seeing eyes",
+    "How you understand me deeply",
+    "Your unforgettable words",
+    "The way time is never enough",
+    "Your smile I dream of",
+    "How you're friend and love",
+    "Your giving heart",
+    "The way you prioritize me",
+    "Your craved presence",
+    "How you see and love all of me",
+    "Your rare gentleness",
+    "The way our memories are treasures",
+    "Your tireless voice",
+    "How you bring out my best",
+    "Your home-like embrace",
+    "The way you accept my flaws",
+    "Your daily inspiration",
+    "How you're my missing piece",
+    "Your others-first soul",
+    "The way I'm safe being vulnerable",
+    "Your universal kindness",
+    "How you make me want to be worthy",
+    "Your comforting words",
+    "The way you're my blessing",
+    "Your deeply loving heart",
+    "How you're my answered prayer",
+    "Your unwavering love",
+    "The way you're my always",
+    "Your matching soul",
+    "How you're my life's love",
+    "Your daily needed presence",
+    "The way you're my sunshine",
+    "Your world-brightening laugh",
+    "How you're my adventure",
+    "Your precious heart",
+    "The way you're my reason to smile",
+    "Your amazing mind",
+    "How you're my happy place",
+    "Your longed-for touch",
+    "The way you're my gift",
+    "Your uplifting energy",
+    "How you're my favorite",
+    "Your showing care",
+    "The way you're my dream",
+    "Your completing presence",
+    "How you're my match",
+    "Your melting ways",
+    "The way you're my everything",
+    "Your daily gratitude",
+    "How you're my love story",
+    "Your forever-protected heart",
+    "The way you're my destiny",
+    "Your endlessly admired spirit",
+    "How you're once in a lifetime",
+    "Your world-meaning care",
+    "The way you're my miracle",
+    "Your limitless kindness",
+    "How you're my prayer answered",
+    "Your cherished soul",
+    "The way you're my treasure",
+    "Your safe-kept heart",
+    "How you're my forever",
+    "Your addictive presence",
+    "The way you're my soulmate completely",
+    "Your necessary essence",
+    "How you're my happily ever after",
+    "Your heart-healing words",
+    "The way you're my one",
+    "Your favorite-view smile",
+    "How you're my world",
+    "Your protected nature",
+    "The way you're my future",
+    "Your favorite-sound laugh",
+    "How you're my home",
+    "Your seeing gaze",
+    "The way you're forever mine",
+    "Your air-like necessity",
+    "How you're my blessing",
+    "Your unconditional heart",
+    "The way you're my reason",
+    "Your soul I love",
+    "How you're my always",
+    "Your craved gentleness",
+    "The way we're each other's",
+    "Your universe-holding eyes",
+    "How you're my endless love",
+    "Your synchronized heart",
+    "The way you're my infinity",
+    "Your life-completing spirit",
+    "How you're my forever and always",
+    "Your life-partner soul",
+    "The way you're my true love",
+    "Your devoted essence",
+    "How you're everything I wanted",
+    "Your cherished heart",
+    "The way you're my eternal love",
+    "Your daily blessing",
+    "Because loving you is the easiest and best thing I've ever done",
+    "The way you make ordinary moments extraordinary",
+    "Your beautiful laughter that I never want to stop hearing",
+    "How you believe in us even when things are tough",
+    "Your precious smile that makes everything worth it",
+    "The way you care about the smallest details",
+    "Your loving nature that touches everyone around you",
+    "How you make me feel like I'm the luckiest person alive",
+    "Your gentle voice that calms my storms",
+    "The way you see beauty in everything",
+    "Your kind soul that shines through everything you do",
+    "How you never give up on what matters to you",
+    "Your adorable habits that make you unique",
+    "The way you light up when you talk about things you love",
+    "Your strength that inspires me to be stronger",
+    "How you make every day feel like an adventure",
+    "Your warm hugs that feel like coming home",
+    "The way you understand me without words",
+    "Your beautiful dreams that I want to help make real",
+    "How you're perfectly imperfect in every way",
+    "Your loving eyes that see the best in me",
+    "The way you make me want to be better every day",
+    "Your precious heart that I promise to protect forever",
+    "How you're my today and all of my tomorrows",
+    "Your sweet presence that makes life complete",
+    "The way loving you feels like breathing - natural and essential",
+    "Your beautiful soul that chose to love mine",
+    "How you're not just my love, but my best friend",
+    "Your everything - because you are my everything",
+    "The way you make forever seem not long enough",
+    "Because you're you, and that's more than enough reason to love you endlessly"
+];// ADD YOUR REASONS HERE
+
+// Background Music Control
+let bgMusic = null;
+
+window.addEventListener('load', function() {
+    bgMusic = document.getElementById('bgMusic');
+    if (bgMusic) {
+        bgMusic.volume = 0.2; // Low volume (20%)
+        
+        // Try to auto-play immediately
+        bgMusic.play().catch(e => {
+            console.log('Autoplay blocked, waiting for user interaction');
+            // If autoplay is blocked, play on first click
+            document.body.addEventListener('click', function playBg() {
+                bgMusic.play();
+                document.body.removeEventListener('click', playBg);
+            }, { once: true });
+        });
+    }
+});
+
+const giftData = {
+flowers: {
+    icon: '🌸',
+    coverImage: 'roselily.jpg',
+    title: 'Flowers',
+    pages: [
+        '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:40px 30px;text-align:center;font-size:1.1em;line-height:1.8;color:#2c3e50;">' +
+            'Because you love flowers and you deserve a whole garden of them. Your favorite flower is Rose, here are all the colors of Rose for you...' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="flower1.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(231,76,60,0.3);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Red Roses 🌹</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="flower2.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(231,76,60,0.3);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Yellow Roses</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="flower3.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(231,76,60,0.3);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">White Roses</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="flower4.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(231,76,60,0.3);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Pink Roses</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="flower5.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(231,76,60,0.3);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Purple Roses</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="flower6.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(231,76,60,0.3);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Blue Roses</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="flower7.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(231,76,60,0.3);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Orange Roses</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="flower8.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(231,76,60,0.3);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">And your favorite color, Black Roses</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:40px 30px;text-align:center;font-size:1.1em;line-height:1.8;color:#2c3e50;">' +
+            'You make everything bloom, including my heart... 🌹💕' +
+        '</div>'
+    ]
+},
+    moon: {
+    icon: '🌙',
+    coverImage: 'moon.png',
+    title: 'Moon & Stars',
+    pages: [
+        '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:40px 30px;text-align:center;font-size:1.1em;line-height:1.8;color:#2c3e50;">' +
+            'You love the moon, and now it\'s here watching over us. Just like the moon lights up the darkest nights, you\'ve been my light through everything...' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);">' +
+            '<img src="her-birth-moon.webp" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 0 30px rgba(244,244,242,0.6);margin-bottom:20px;">' +
+            '<p style="color:#ffd700;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;text-shadow:0 0 10px rgba(255,215,0,0.5);">The Moon on Your Birthday 🌙</p>' +
+            '<p style="color:#fff;font-size:0.95em;text-align:center;margin-top:10px;opacity:0.9;">The night sky when you came into this world</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);">' +
+            '<img src="my-birth-moon.webp" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 0 30px rgba(244,244,242,0.6);margin-bottom:20px;">' +
+            '<p style="color:#ffd700;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;text-shadow:0 0 10px rgba(255,215,0,0.5);">The Moon on My Birthday 🌙</p>' +
+            '<p style="color:#fff;font-size:0.95em;text-align:center;margin-top:10px;opacity:0.9;">The night sky when I came into this world</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);">' +
+            '<img src="our-moons-together.png" style="max-width:90%;max-height:280px;border-radius:20px;box-shadow:0 0 40px rgba(244,244,242,0.8);margin-bottom:20px;">' +
+            '<p style="color:#ffd700;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;text-shadow:0 0 10px rgba(255,215,0,0.5);">Our Moons Together 🌙✨</p>' +
+            '<p style="color:#fff;font-size:0.95em;text-align:center;margin-top:10px;opacity:0.9;">Together we both complete each other</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:40px 30px;text-align:center;font-size:1.1em;line-height:1.8;color:#2c3e50;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            'I promise to be your constant, just like the moon that returns every night, no matter what.  Thank you for being the light in my darkest night darkest times🌙' +
+        '</div>'
+    ]
+},
+    jhumkas: {
+    icon: '📿',
+    coverImage: 'jhumka.jpg',
+    title: 'Jhumkas',
+    pages: [
+        '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:40px 30px;text-align:center;font-size:1.1em;line-height:1.8;color:#2c3e50;">' +
+            'I hope that you like this gift as you like jhumkas💖' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="jhumka1.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(218,165,32,0.4);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Golden Elegance ✨</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="jhumka2.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(218,165,32,0.4);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Silver Beauty 💫</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="jhumka3.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(218,165,32,0.4);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Traditional Charm 🌺</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="jhumka4.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(218,165,32,0.4);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Pearl Wonder 🤍</p>' +
+        '</div>',
+    ]
+},
+   reasons: {
+        icon: '💌',
+        coverImage: 'heart.jpg',
+        title: '365 Days - 365 Reasons',
+        pages: [
+            '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:40px 30px;text-align:center;font-size:1.1em;line-height:1.8;color:#2c3e50;">' +
+            'Its finally been an year since we met and throughout that time ive got infinite reasons to love you❤️' +
+        '</div>'
+        ]
+    },
+seedhemaut: {
+  icon: '🎵',
+   coverImage: 'idmtl.jfif',
+  title: 'Seedhe Maut',
+  pages: [
+    '<div class="spotify-player seedhe-maut-player maina" onclick="event.stopPropagation()">' +
+      '<img src="maxresdefault.jpg" class="album-art" />' +
+      '<div class="track-info">' +
+        '<div class="track-name">Maina</div>' +
+        '<div class="artist-name">Seedhe Maut</div>' +
+      '</div>' +
+      '<audio src="maina.mp3"></audio>' +
+      '<div class="controls">' +
+        '<button class="play-btn">▶</button>' +
+        '<div class="progress-container">' +
+          '<input type="range" class="progress" value="0" />' +
+          '<div class="time-display">' +
+            '<span class="current-time">0:00</span>' +
+            '<span class="duration">0:00</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="volume-container">' +
+        '<span class="volume-icon">🔊</span>' +
+        '<input type="range" class="volume" min="0" max="1" step="0.01" value="0.6" />' +
+      '</div>' +
+      '<div class="lyrics-container">' +
+        '<div class="lyrics-wrapper">' +
+          '<div class="lyrics-line" data-time="5">Maina tu gaade agar</div>' +
+          '<div class="lyrics-line" data-time="12">Maina tu gaade agar</div>' +
+          '<div class="lyrics-line" data-time="19">Maina tu gaade agar</div>' +
+          '<div class="lyrics-line" data-time="28">Charam pe pohocha dard mujhe marham de</div>' +
+          '<div class="lyrics-line" data-time="30">Bheje me hai khaati lakh awaaz</div>' +
+          '<div class="lyrics-line" data-time="32">So nahi pata mai hu poori raat</div>' +
+          '<div class="lyrics-line" data-time="34">Fir uth nahi pata hu mai palang se</div>' +
+          '<div class="lyrics-line" data-time="35">Sharam kar, sharan de</div>' +
+          '<div class="lyrics-line" data-time="37">Deemak kaate mere badan pe</div>' +
+          '<div class="lyrics-line" data-time="39">Par zank ni khata hai is kalam pe</div>' +
+          '<div class="lyrics-line" data-time="41">Hai Seekha agar maine lena kuch</div>' +
+          '<div class="lyrics-line" data-time="43">Vo hai seekha lena kaan sabr se</div>' +
+          '<div class="lyrics-line" data-time="44">Tere sorry ke aage ek magar hai</div>' +
+          '<div class="lyrics-line" data-time="46">Bharosa hai tujhpe hamesha se</div>' +
+          '<div class="lyrics-line" data-time="47">Lekin tu gaati nahi hai ye galat hai</div>' +
+          '<div class="lyrics-line" data-time="50">Chapa hai ye meri shakal me</div>' +
+          '<div class="lyrics-line" data-time="51">Hai khushi nahi teri chehek me</div>' +
+          '<div class="lyrics-line" data-time="53">Jabse nanu ni hai saath bagal me</div>' +
+          '<div class="lyrics-line" data-time="56">Bachpan gaya choot shit shit shit</div>' +
+          '<div class="lyrics-line" data-time="58">Lekin ghadi cdhale jaae tik tik tik</div>' +
+          '<div class="lyrics-line" data-time="60">Dar karta hai mujhe viksit</div>' +
+          '<div class="lyrics-line" data-time="61">Peeche ek awaaz cheekhti hai this is it</div>' +
+          '<div class="lyrics-line" data-time="63">Jo tu ab bhi ni aaegi to khudgarz hai tu</div>' +
+          '<div class="lyrics-line" data-time="64">Meri halat dekh tujhe sharm nahi aati?</div>' +
+          '<div class="lyrics-line" data-time="66">Meri haath ki lakeere mere haath me ni hai</div>' +
+          '<div class="lyrics-line" data-time="68">Tu sab jaanti hai fir bhi ni gaati hai (Maaf kar)</div>' +
+          '<div class="lyrics-line" data-time="70">Jo hai vo hai kya karein</div>' +
+          '<div class="lyrics-line" data-time="72">Kab tak khud hi se ladein, Nahi</div>' +
+          '<div class="lyrics-line" data-time="74"> The hum kabhi bhi sage</div>' +
+          '<div class="lyrics-line" data-time="75">Tha mai tere bharose par tu thi jaha se pare</div>' +
+          '<div class="lyrics-line" data-time="77">Jaha pe rehena hai vaha jaake reh</div>' +
+          '<div class="lyrics-line" data-time="79">Hum hai aage kaafi badh chuke zindagi me</div>' +
+          '<div class="lyrics-line" data-time="81">Par maine the tere hamesha bade</div>' +
+          '<div class="lyrics-line" data-time="82">Par tu chup hai toh hum kya kare</div>' +
+          '<div class="lyrics-line" data-time="89">Maina tu gaade agar</div>' +
+          '<div class="lyrics-line" data-time="96">Maina tu gaade agar</div>' +
+          '<div class="lyrics-line" data-time="104">Maina tu gaade agar</div>' +
+          '<div class="lyrics-line" data-time="111">Maina tu gaade to khiske paero tale zameen bhi mere</div>' +
+          '<div class="lyrics-line" data-time="114">In kaano k liye tera gussa bhi geet hai</div>' +
+          '<div class="lyrics-line" data-time="116">Bola tujhe mene dard ab ateet hai</div>' +
+          '<div class="lyrics-line" data-time="117">Par aage kara khud hi fuck up ek aur hu me galat</div>' +
+          '<div class="lyrics-line" data-time="120">Par maina suna de kuch</div>' +
+          '<div class="lyrics-line" data-time="122">Ek Lori jo seedhe mitade dukh</div>' +
+          '<div class="lyrics-line" data-time="123">Sur aisa jo mujhe dikhade sukh</div>' +
+          '<div class="lyrics-line" data-time="125">Ha sabne gaane se hi toka</div>' +
+          '<div class="lyrics-line" data-time="129">Haa teri chuppi bole wahi(Maina maina maina maina)</div>' +
+          '<div class="lyrics-line" data-time="132">Harr jagah mila saala dhoka</div>' +
+          '<div class="lyrics-line" data-time="136">Teri chuppi bole wahi(Maina maina maina maina)</div>' +
+          '<div class="lyrics-line" data-time="139">Theek hai to mere liye na gaa ye gaana par apne liye gaa tu</div>' +
+          '<div class="lyrics-line" data-time="143">Aur hoga jab poora to mujhe sunana aath fookenge ghaas phoos</div>' +
+          '<div class="lyrics-line" data-time="146">Aur tujhe kya padha kya bole zamaana ye sab haige jhaatu</div>' +
+          '<div class="lyrics-line" data-time="150">To maina tu firse suna de kuch</div>' +
+          '<div class="lyrics-line" data-time="151">Ek lori jo dil ko dawa de </div>' +
+          '<div class="lyrics-line" data-time="153">Hu besabhar aakhir koi isko mana lo</div>' +
+          '<div class="lyrics-line" data-time="155">Me peeche padha maina gaana </div>' +
+          '<div class="lyrics-line" data-time="156">Mai ni gaati thaana mene boli maina </div>' +
+          '<div class="lyrics-line" data-time="158">Mai na maana haar aur tu bhi dheet hai maina </div>' +
+          '<div class="lyrics-line" data-time="159">Maana mene,Kare fuck up haina</div>' +
+          '<div class="lyrics-line" data-time="161">Par abhi mauka to de ek</div>' +
+          '<div class="lyrics-line" data-time="163">Saare mukhauto ko fek ke</div>' +
+          '<div class="lyrics-line" data-time="164">Tujh jaisi tu hi hai ek</div>' +
+          '<div class="lyrics-line" data-time="166">Iss dhun ko tu khudme samet ke maina gaana</div>' +
+          '<div class="lyrics-line" data-time="174">Maina tu gaade agar</div>' +
+          '<div class="lyrics-line" data-time="181">Maina tu gaade agar</div>' +
+          '<div class="lyrics-line" data-time="188">Maina tu gaade agar</div>' +
+          '<div class="lyrics-line" data-time="224">Sez on the Beat, boy!</div>' +
+        '</div>' +
+      '</div>' +
+      '<p class="song-caption">TBSM🐉⚔️</p>' +
+    '</div>',
+    
+    
+    
+    '<div class="spotify-player seedhe-maut-player pankh" onclick="event.stopPropagation()">' +
+  '<img src="pankh-cover.jfif" class="album-art" />' +
+  '<div class="track-info">' +
+    '<div class="track-name">Pankh</div>' +
+    '<div class="artist-name">Seedhe Maut</div>' +
+  '</div>' +
+  '<audio src="pankh.mp3"></audio>' +
+  '<div class="controls">' +
+    '<button class="play-btn">▶</button>' +
+    '<div class="progress-container">' +
+      '<input type="range" class="progress" value="0" />' +
+      '<div class="time-display">' +
+        '<span class="current-time">0:00</span>' +
+        '<span class="duration">0:00</span>' +
+      '</div>' +
+    '</div>' +
+  '</div>' +
+  '<div class="volume-container">' +
+    '<span class="volume-icon">🔊</span>' +
+    '<input type="range" class="volume" min="0" max="1" step="0.01" value="0.6" />' +
+  '</div>' +
+  '<div class="lyrics-container">' +
+    '<div class="lyrics-wrapper">' +
+      '<div class="lyrics-line" data-time="7">Sez on the beat</div>' +
+      '<div class="lyrics-line" data-time="8">अब उड़ चलें</div>' +
+      '<div class="lyrics-line" data-time="13">हम-तुम कहाँ? "यहाँ" "यहाँ"</div>' +
+      '<div class="lyrics-line" data-time="27">उठो बनो बड़ा, पढ़ो लिखो दिल हो ना हो</div>' +
+      '<div class="lyrics-line" data-time="28">बोलो जो वो बोलो</div>' +
+      '<div class="lyrics-line" data-time="29">जो ना माने पीटो बेटा लाओ ला डंडा</div>' +
+      '<div class="lyrics-line" data-time="32">क्या बात है? क्या बात है?</div>' +
+      '<div class="lyrics-line" data-time="34">पाँव छुओ चलो क्या बात है?</div>' +
+      '<div class="lyrics-line" data-time="35">गये कहाँ संस्कार तेरे?</div>' +
+      '<div class="lyrics-line" data-time="37">जीता गलतफ़हमी में तू सोचे घुमे आगे-पीछे संसार तेरे</div>' +
+      '<div class="lyrics-line" data-time="40">पहले धन छाप बेटे, उन्हें घंटा खेद है</div>' +
+      '<div class="lyrics-line" data-time="42">होती light नहीं उस शहर में जहाँ पंखा fail है बोल धप्पा</div>' +
+      '<div class="lyrics-line" data-time="46">पूरे दिन गड़ी फ़ोन में नज़र</div>' +
+      '<div class="lyrics-line" data-time="47">लाडसाहब की लालसा भी गुम, चल जाग जा</div>' +
+      '<div class="lyrics-line" data-time="50">टूटे दिल बाजे फ़ोन में ग़ज़ल</div>' +
+      '<div class="lyrics-line" data-time="52">आज रात की बात है कल जाम है बे हँस जा</div>' +
+      '<div class="lyrics-line" data-time="54">ये ध्यान है जड़ हैं मर रहे लोग (फँस जा)</div>' +
+      '<div class="lyrics-line" data-time="56">ले बहन वो पहन make up लगा (थम जा)</div>' +
+      '<div class="lyrics-line" data-time="58">भेजा ये पैर दो हाथ पकड़े कम क्या (कम)</div>' +
+      '<div class="lyrics-line" data-time="61">पंख हैं तो पूरे फैला बस क्या</div>' +
+      '<div class="lyrics-line" data-time="62">हर कोई बाँसूरी बजाते हैं बस में</div>' +
+      '<div class="lyrics-line" data-time="65">चले बस ना किसी का</div>' +
+      '<div class="lyrics-line" data-time="67">एक ही बस में बैठा सभी बस्तों में लिये टूटे सपने</div>' +
+      '<div class="lyrics-line" data-time="69">बचने को जगह नहीं बची मेरे बच्चे, ढकदो</div>' +
+      '<div class="lyrics-line" data-time="72">ये लाश ये आँसू खून ये जान मत लो</div>' +
+      '<div class="lyrics-line" data-time="74">है सारी शाषन झूठ ये बात रट लो</div>' +
+      '<div class="lyrics-line" data-time="76">उठा भरोसा साफ है सब यहाँ खाली छोड़ हैं</div>' +
+      '<div class="lyrics-line" data-time="79">बाहर उड़ान भर लो</div>' +
+      '<div class="lyrics-line" data-time="81">चल चलें हम-तुम वहाँ</div>' +
+      '<div class="lyrics-line" data-time="89">जहाँ हो धुन नयी</div>' +
+      '<div class="lyrics-line" data-time="98">आँख खोल, उपर देख</div>' +
+      '<div class="lyrics-line" data-time="101">पंखों को फैला और भर उड़ान</div>' +
+      '<div class="lyrics-line" data-time="103">(ऊपर ही, ऊपर ही)</div>' +
+      '<div class="lyrics-line" data-time="105>(ऊपर ही, ऊपर ही, ऊपर ही)</div>' +
+      '<div class="lyrics-line" data-time="107">आँख खोल, उपर देख</div>' +
+      '<div class="lyrics-line" data-time="109">पंखों को फैला और भर उड़ान</div>' +
+      '<div class="lyrics-line" data-time="113">(ऊपर ही, ऊपर ही)</div>' +
+      '<div class="lyrics-line" data-time="115">(ऊपर ही, ऊपर ही, ऊपर ही)</div>' +
+      '<div class="lyrics-line" data-time="117">पता चला मुझे साी बात बढ़ जायेगी</div>' +
+      '<div class="lyrics-line" data-time="119">तू चुप ही रहता</div>' +
+      '<div class="lyrics-line" data-time="120">चल चुप हूँ मैं बता फिर तू क्यूँ है सहता?</div>' +
+      '<div class="lyrics-line" data-time="122">घर पे सुनता school पे सुनता</div>' +
+      '<div class="lyrics-line" data-time="124">बता मुझे कि तू क्यूँ है सहता?</div>' +
+      '<div class="lyrics-line" data-time="126">सब से सुनता डर के सुनता</div>' +
+      '<div class="lyrics-line" data-time="127">बता मुझे कि तू क्यूँ है बहका?</div>' +
+      '<div class="lyrics-line" data-time="129">खुद से तुच्चे लोग बोले सस्ता</div>' +
+      '<div class="lyrics-line" data-time="131">उनसे खुद पे load लेके भूल ना रास्ता पर आम</div>' +
+      '<div class="lyrics-line" data-time="135">तेरी पलकों पे लेटा लिखूँ आधी नींद में</div>' +
+      '<div class="lyrics-line" data-time="139">इतना तो जायज है (शायद से)</div>' +
+      '<div class="lyrics-line" data-time="144">प्यार से ज्यादा ही प्यारा</div>' +
+      '<div class="lyrics-line" data-time="146">साधू की नीयत से न्यारा</div>' +
+      '<div class="lyrics-line" data-time="147">अक पंक्षी के पंखों से हल्का से हल्का ये रिश्ता हमारा</div>' +
+      '<div class="lyrics-line" data-time="151">इतना सा कहना मैं चाह रहा</div>' +
+      '<div class="lyrics-line" data-time="152">कि मुझपे नहीं है कोई छा रहा</div>' +
+      '<div class="lyrics-line" data-time="154">मैं जी लिया काफी बेचारा सा</div>' +
+      '<div class="lyrics-line" data-time="156">Industry देती है चारा</div>' +
+      '<div class="lyrics-line" data-time="157">जिसे मैं घंटा नहीं खा रहा था</div>' +
+      '<div class="lyrics-line" data-time="159">क्या कहा था इनसे जब शुरू में करने था जा रहा?</div>' +
+      '<div class="lyrics-line" data-time="162">चलना है मंज़िल तक मैं चलता ही जा रहा (चलेगा?)</div>' +
+      '<div class="lyrics-line" data-time="164">किसी की आँखों में मैं तारा</div>' +
+      '<div class="lyrics-line" data-time="165">किसी की आँखों में आवारा</div>' +
+      '<div class="lyrics-line" data-time="167">बस तेरी आँखों का सहारा था</div>' +
+      '<div class="lyrics-line" data-time="169">चल चलें हम-तुम वहाँ</div>' +
+      '<div class="lyrics-line" data-time="177">जहाँ हो धुन नयी</div>' +
+      '<div class="lyrics-line" data-time="187">आँख खोल, उपर देख</div>' +
+      '<div class="lyrics-line" data-time="189">पंखों को फैला और भर उड़ान</div>' +
+      '<div class="lyrics-line" data-time="193">(ऊपर ही, ऊपर ही)</div>' +
+      '<div class="lyrics-line" data-time="295">(ऊपर ही, ऊपर ही, ऊपर ही)</div>' +
+    '</div>' +
+  '</div>' +
+  '<p class="song-caption">TBSM🐉⚔️</p>' +
+'</div>',
+
+
+'<div class="spotify-player seedhe-maut-player idmtl" onclick="event.stopPropagation()">' +
+  '<img src="idmtl.jfif" class="album-art" />' +
+  '<div class="track-info">' +
+    '<div class="track-name">I Don\'t Miss That Life</div>' +
+    '<div class="artist-name">Seedhe Maut</div>' +
+  '</div>' +
+  '<audio src="idmtl.mp3"></audio>' +
+  '<div class="controls">' +
+    '<button class="play-btn">▶</button>' +
+    '<div class="progress-container">' +
+      '<input type="range" class="progress" value="0" />' +
+      '<div class="time-display">' +
+        '<span class="current-time">0:00</span>' +
+        '<span class="duration">0:00</span>' +
+      '</div>' +
+    '</div>' +
+  '</div>' +
+  '<div class="volume-container">' +
+    '<span class="volume-icon">🔊</span>' +
+    '<input type="range" class="volume" min="0" max="1" step="0.01" value="0.6" />' +
+  '</div>' +
+  '<div class="lyrics-container">' +
+    '<div class="lyrics-wrapper">' +
+      '<div class="lyrics-line" data-time="0">Gandi aadatein dafnaaun kyun?</div>' +
+      '<div class="lyrics-line" data-time="2">Living like maut na hai door</div>' +
+      '<div class="lyrics-line" data-time="5">Aankhon se nahi chhipta hai jhooth</div>' +
+      '<div class="lyrics-line" data-time="7">Dikkaton se sasti hai booze</div>' +
+      '<div class="lyrics-line" data-time="10">I just wanna roll my doob</div>' +
+      '<div class="lyrics-line" data-time="13">Usse pehle meri jaan le tu</div>' +
+      '<div class="lyrics-line" data-time="15">Mujhe achchhe se nahi jaanti tu</div>' +
+      '<div class="lyrics-line" data-time="18">Dost hai bas naam ki tu</div>' +
+      '<div class="lyrics-line" data-time="20">Gandi aadatein dafnaaun kyun?</div>' +
+      '<div class="lyrics-line" data-time="22">Living like maut na hai door</div>' +
+      '<div class="lyrics-line" data-time="25">Aankhon se nahi chhipta hai jhooth</div>' +
+      '<div class="lyrics-line" data-time="27">Dikkaton se sasti hai booze</div>' +
+      '<div class="lyrics-line" data-time="30">I just wanna roll my doob</div>' +
+      '<div class="lyrics-line" data-time="33">Usse pehle meri jaan le tu</div>' +
+      '<div class="lyrics-line" data-time="35">Mujhe achchhe se nahi jaanti tu</div>' +
+      '<div class="lyrics-line" data-time="37">Dost hai bas naam ki tu</div>' +
+      '<div class="lyrics-line" data-time="40">Paas khada hua tere main taaki bhala ho mera bhi</div>' +
+      '<div class="lyrics-line" data-time="43">Ghoome tu Paris aur bolun main yahaan pe, "C\'est la vie"</div>' +
+      '<div class="lyrics-line" data-time="45">Socha jaane do, maa ki choot, kari mehnat aur padha nahi</div>' +
+      '<div class="lyrics-line" data-time="48">Rati mein launde the saare kameene, kare nashe, pata nahi</div>' +
+      '<div class="lyrics-line" data-time="51">Oye, hum kal kya kar rahe the, bro?</div>' +
+      '<div class="lyrics-line" data-time="52">"Aaja, phoonk le tu bhi," was the best advice</div>' +
+      '<div class="lyrics-line" data-time="55">Do saal tha main BT mein, woh test tha, bhai</div>' +
+      '<div class="lyrics-line" data-time="57">Tab kaafi answer kari booty calls left to right</div>' +
+      '<div class="lyrics-line" data-time="60">I don\'t miss that life, aa gaye door</div>' +
+      '<div class="lyrics-line" data-time="62">Pehle the ganda stressed</div>' +
+      '<div class="lyrics-line" data-time="63">Abhi do kavi ne bana liya khud ka naam, hain bande best</div>' +
+      '<div class="lyrics-line" data-time="66">Par dikkatein chhodein na peechha jahaan bhi jaayein hum Jeete jaayein hum</div>' +
+      '<div class="lyrics-line" data-time="69">Ho hum cheete chaahe, bheetar paayein trauma jo sajaaye dard</div>' +
+      '<div class="lyrics-line" data-time="71">Tabhi to rukte nahi jhote jab baithte launde saath</div>' +
+      '<div class="lyrics-line" data-time="74">Tabhi to dhoondte har mauka hansne ka har chhoti baat par</div>' +
+      '<div class="lyrics-line" data-time="77">Tabhi to karta hoon apne laundon ki hifaazat main</div>' +
+      '<div class="lyrics-line" data-time="79">Jitni kar loon koshish, nahi chhoot\'ti gandi aadatein</div>' +
+      '<div class="lyrics-line" data-time="81">Gandi aadatein dafnaaun kyun?</div>' +
+      '<div class="lyrics-line" data-time="83">Living like maut na hai door</div>' +
+      '<div class="lyrics-line" data-time="86">Aankhon se nahi chhipta hai jhooth</div>' +
+      '<div class="lyrics-line" data-time="88">Dikkaton se sasti hai booze</div>' +
+      '<div class="lyrics-line" data-time="91">I just wanna roll my doob</div>' +
+      '<div class="lyrics-line" data-time="93">Usse pehle meri jaan le tu</div>' +
+      '<div class="lyrics-line" data-time="96">Mujhe achchhe se nahi jaanti tu</div>' +
+      '<div class="lyrics-line" data-time="98">Dost hai bas naam ki tu</div>' +
+      '<div class="lyrics-line" data-time="101">Mere aage ghati ghatna hai tu</div>' +
+      '<div class="lyrics-line" data-time="103">Subah ka sapna hai tu</div>' +
+      '<div class="lyrics-line" data-time="106">Paas aaun to tu bhaag jaaye door</div>' +
+      '<div class="lyrics-line" data-time="108">Na mujhe kabhi apnaaye tu</div>' +
+      '<div class="lyrics-line" data-time="111">Kyun aage mere ghabraaye tu?</div>' +
+      '<div class="lyrics-line" data-time="114">Yeh dekh tera dab raha hai noor</div>' +
+      '<div class="lyrics-line" data-time="116">Kya bata hoon main itna kroor?</div>' +
+      '<div class="lyrics-line" data-time="119">Nahi hoon main itna... Sach mein</div>' +
+      '<div class="lyrics-line" data-time="123">Nahi hai bas mein ki khud ko badal ke palat doon yeh lamhe</div>' +
+      '<div class="lyrics-line" data-time="127">Yahaan main hoon, yahaan tu hai, par kya yahaan pe hum hain?</div>' +
+      '<div class="lyrics-line" data-time="129">Yahaan nahi koi jhande, tujhe dikhte laal jhande</div>' +
+      '<div class="lyrics-line" data-time="132">Yahaan toote hain dil, par na toote ghamand hain</div>' +
+      '<div class="lyrics-line" data-time="134">Nafrat aur pyaar mein ek aisa sambandh hai</div>' +
+      '<div class="lyrics-line" data-time="137">Ki ab usko keh raha tha ja raha main ghar se</div>' +
+      '<div class="lyrics-line" data-time="139">Aur ab usko keh raha hoon, "Aaja palat ke"</div>' +
+      '<div class="lyrics-line" data-time="141">Gandi aadatein dafnaaun kyun?</div>' +
+      '<div class="lyrics-line" data-time="144">Living like maut na hai door</div>' +
+      '<div class="lyrics-line" data-time="146">Aankhon se nahi chhipta hai jhooth</div>' +
+      '<div class="lyrics-line" data-time="149">Dikkaton se sasti hai booze</div>' +
+      '<div class="lyrics-line" data-time="151">I just wanna roll my doob</div>' +
+      '<div class="lyrics-line" data-time="154">Usse pehle meri jaan le tu</div>' +
+      '<div class="lyrics-line" data-time="156">Mujhe achchhe se nahi jaanti tu</div>' +
+      '<div class="lyrics-line" data-time="159">Dost hai bas naam ki tu</div>' +
+    '</div>' +
+  '</div>' +
+  '<p class="song-caption">TBSM🐉⚔️</p>' +
+'</div>'
+  ]
+},
+
+    favorites: {
+    icon: '🥰',
+    coverImage: 'donuts.jpg',
+    title: 'Your Favorites',
+    pages: [
+        '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:40px 30px;text-align:center;font-size:1.1em;line-height:1.8;color:#2c3e50;">' +
+            'I remember that you like sweets, so here are some of your favorite ones! 🍩🍰' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="sweet1.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(231,76,60,0.3);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Tiramisu🍰</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="sweet2.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(231,76,60,0.3);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Ice cream 🍦</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="sweet3.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(231,76,60,0.3);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Donuts 🍩</p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:linear-gradient(135deg,#fff5f5 0%,#ffe5e5 100%);">' +
+            '<img src="sweet4.jpg" style="max-width:90%;max-height:250px;border-radius:20px;box-shadow:0 10px 30px rgba(231,76,60,0.3);margin-bottom:20px;">' +
+            '<p style="color:#2c3e50;font-size:1.1em;text-align:center;line-height:1.6;font-style:italic;">Chocolates😋🍫 </p>' +
+        '</div>',
+        '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:40px 30px;text-align:center;font-size:1.1em;line-height:1.8;color:#2c3e50;">' +
+            'You make life sweeter than any dessert could ever be! 💕🍰' +
+        '</div>'
+    ]
+},
+surprise: {
+        icon: '🎁',
+         coverImage: 'surprise.png',
+        title: 'Special Surprise',
+        pages: [
+            '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:40px 30px;text-align:center;font-size:1.1em;line-height:1.8;color:#2c3e50;">' +
+            'I know that these are just templates but i hope you like this💕' +
+        '</div>',
+            '<div class="video-page">' +
+                '<div class="video-wrapper">' +
+                    '<video controls class="styled-video" src="edit1.mp4"></video>' +
+                '</div>' +
+            '</div>',
+            '<div class="video-page">' +
+                '<div class="video-wrapper">' +
+                    '<video controls class="styled-video" src="edit2.mp4"></video>' +
+                '</div>' +
+            '</div>',
+            '<div class="video-page">' +
+                '<div class="video-wrapper">' +
+                    '<video controls class="styled-video" src="edit3.mp4"></video>' +
+                '</div>' +
+            '</div>',
+            '<div class="video-page">' +
+                '<div class="video-wrapper">' +
+                    '<video controls class="styled-video" src="edit4.mp4"></video>' +
+                '</div>' +
+            '</div>'
+        ]
+    }
+};
+
+window.openBookGift = function(type) {
+    const modal = document.getElementById('bookModal');
+    const book = document.getElementById('book');
+    const ribbon = document.getElementById('ribbon');
+    const hint = document.getElementById('bookHint');
+    const coverIcon = document.getElementById('coverIcon');
+    const coverTitle = document.getElementById('coverTitle');
+    const container = document.getElementById('pagesContainer');
+    
+// Reset everything
+    currentStep = 0;
+    currentPage = 0;
+    book.classList.remove('open', 'all-pages-turned');
+    container.innerHTML = '';
+    allPages = [];
+    
+   const gift = giftData[type];
+    
+    // Set cover image or icon
+    if (gift.coverImage) {
+        coverIcon.innerHTML = '<img src="' + gift.coverImage + '" style="width:120px;height:120px;object-fit:cover;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.4);">';
+    } else {
+        coverIcon.textContent = gift.icon;
+    }
+    
+    coverTitle.textContent = gift.title;
+    
+    if (type === 'reasons') {
+        gift.pages.forEach(txt => {
+            const p = document.createElement('div');
+            p.className = 'page';
+            p.innerHTML = '<div class="page-content">' + txt + '</div>';
+            container.appendChild(p);
+            allPages.push(p);
+        });
+
+        
+        const chunks = [];
+        for(let i = 0; i < reasons.length; i += 8) {
+            chunks.push(reasons.slice(i, i + 8));
+        }
+        
+        chunks.forEach((chunk, idx) => {
+            const p = document.createElement('div');
+            p.className = 'page';
+            let html = '<div class="page-content" style="max-height:100%;overflow-y:auto;">';
+            chunk.forEach((r, i) => {
+                const num = (idx * 8) + i + 1;
+                html += '<div class="reason-item"><div class="reason-number">Reason ' + num + '</div><div class="reason-text">' + r + '</div></div>';
+            });
+            html += '</div>';
+            p.innerHTML = html;
+            container.appendChild(p);
+            allPages.push(p);
+        });
+    } else {
+        gift.pages.forEach(txt => {
+            const p = document.createElement('div');
+            p.className = 'page';
+            p.innerHTML = '<div class="page-content">' + txt + '</div>';
+            container.appendChild(p);
+            allPages.push(p);
+        });
+    }
+    
+// After all pages are created, set z-index properly (highest first)
+allPages.forEach((page, index) => {
+    page.style.zIndex = 90 - index; // Start from 90 and count down
+});
+    
+    modal.style.display = 'block';
+    document.body.classList.add('book-open');
+    document.body.style.overflow = 'hidden';
+    hint.textContent = 'Click the ribbon to open the book';
+    if (type === 'seedhemaut') {
+  setTimeout(initSeedheMautPlayers, 100);
+}
+
+if (type === 'surprise') {
+  setTimeout(initVideoControls, 100);
+}
+}
+
+window.closeBookModal = function() {
+    document.getElementById('bookModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+    document.body.classList.remove('book-open');
+    
+    // Stop all Seedhe Maut songs and resume background music
+    document.querySelectorAll('.seedhe-maut-player audio').forEach(a => {
+        a.pause();
+        a.currentTime = 0;
+    });
+    if (bgMusic) bgMusic.play();
+}
+
+document.getElementById('bookScene').addEventListener('click', function() {
+    const book = document.getElementById('book');
+    const hint = document.getElementById('bookHint');
+    
+    if (currentStep === 0) {
+        // Open the front cover
+        book.classList.add('open');
+        currentStep++;
+        hint.textContent = 'Click to turn pages';
+    } else if (currentPage < allPages.length) {
+    // Turn the current page - stop all audio and videos
+    document.querySelectorAll('.seedhe-maut-player audio').forEach(a => a.pause());
+    document.querySelectorAll('.styled-video').forEach(v => {
+        v.pause();
+        v.currentTime = 0;
+    });
+
+    const page = allPages[currentPage];
+
+if (currentPage === allPages.length - 1) {
+    page.classList.add('last');
+}
+
+page.classList.add('turn');
+
+        currentPage++;
+        
+        // Check if all pages are turned - show back cover
+      if (currentPage === allPages.length) {
+    hint.textContent = 'Closing the book...';
+
+   setTimeout(() => {
+    hint.textContent = '…';
+
+    setTimeout(() => {
+        book.classList.add('all-pages-turned');
+        hint.textContent = 'The End 💛';
+    }, 600);
+
+}, 800);
+
+}
+
+    }
+});
+
+function initSeedheMautPlayers() {
+  document.querySelectorAll('.seedhe-maut-player').forEach(player => {
+    const audio = player.querySelector('audio');
+    const playBtn = player.querySelector('.play-btn');
+    const progress = player.querySelector('.progress');
+    const volume = player.querySelector('.volume');
+    const currentTimeEl = player.querySelector('.current-time');
+    const durationEl = player.querySelector('.duration');
+    const lyricsContainer = player.querySelector('.lyrics-container');
+    const lyricsWrapper = player.querySelector('.lyrics-wrapper');
+    const lyricsLines = lyricsWrapper ? Array.from(lyricsWrapper.querySelectorAll('.lyrics-line')) : [];
+
+    // Format time helper
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    // Smooth Spotify-style lyrics scrolling
+  // Smooth Spotify-style lyrics scrolling
+// Timestamp-based lyrics scrolling
+function syncLyrics() {
+  if (lyricsLines.length === 0 || !audio.duration) return;
+  
+  const currentTime = audio.currentTime;
+  let currentIndex = -1;
+  
+  // Find the current lyric line based on timestamp
+  lyricsLines.forEach((line, index) => {
+    const timestamp = parseFloat(line.getAttribute('data-time'));
+    const nextTimestamp = index < lyricsLines.length - 1 
+      ? parseFloat(lyricsLines[index + 1].getAttribute('data-time'))
+      : audio.duration;
+    
+    if (currentTime >= timestamp && currentTime < nextTimestamp) {
+      currentIndex = index;
+    }
+  });
+  
+  // Apply classes to lines
+  lyricsLines.forEach((line, index) => {
+    line.classList.remove('active', 'prev', 'next');
+    
+    if (index === currentIndex) {
+      line.classList.add('active');
+    } else if (index === currentIndex - 1) {
+      line.classList.add('prev');
+    } else if (index === currentIndex + 1) {
+      line.classList.add('next');
+    }
+  });
+
+
+// Smooth scroll animation - keep active line centered
+if (currentIndex >= 0 && currentIndex < lyricsLines.length) {
+    const activeLine = lyricsLines[currentIndex];
+    const containerHeight = lyricsContainer.offsetHeight;
+    const lineTop = activeLine.offsetTop;
+    const lineHeight = activeLine.offsetHeight;
+    const offset = lineTop - (containerHeight / 2) + (lineHeight / 2);
+    lyricsWrapper.style.transform = `translateY(-${Math.max(0, offset)}px)`;
+}
+}
+
+    // Play/Pause button
+   // Play/Pause button
+    playBtn.addEventListener('click', e => {
+      e.stopPropagation();
+
+      document.querySelectorAll('.seedhe-maut-player audio').forEach(a => {
+        if (a !== audio) {
+          a.pause();
+          a.parentElement.querySelector('.play-btn').textContent = '▶';
+        }
+      });
+
+      if (audio.paused) {
+        // Pause background music when playing Seedhe Maut
+        if (bgMusic) bgMusic.pause();
+        audio.play();
+        playBtn.textContent = '⏸';
+      } else {
+        audio.pause();
+        playBtn.textContent = '▶';
+        // Resume background music when pausing Seedhe Maut
+        if (bgMusic) bgMusic.play();
+      }
+    });
+
+    // Update progress, time display, and lyrics
+    audio.addEventListener('timeupdate', () => {
+      progress.value = (audio.currentTime / audio.duration) * 100 || 0;
+      if (currentTimeEl) currentTimeEl.textContent = formatTime(audio.currentTime);
+      syncLyrics();
+    });
+
+    // Set duration when loaded
+    audio.addEventListener('loadedmetadata', () => {
+      if (durationEl) durationEl.textContent = formatTime(audio.duration);
+    });
+
+    // Seek functionality
+    progress.addEventListener('input', e => {
+      e.stopPropagation();
+      audio.currentTime = (progress.value / 100) * audio.duration;
+    });
+
+    progress.addEventListener('click', e => {
+      e.stopPropagation();
+    });
+
+    // Volume control
+    volume.addEventListener('input', e => {
+      e.stopPropagation();
+      audio.volume = volume.value;
+    });
+
+    volume.addEventListener('click', e => {
+      e.stopPropagation();
+    });
+
+    // Reset play button and lyrics when audio ends
+    audio.addEventListener('ended', () => {
+      playBtn.textContent = '▶';
+      lyricsLines.forEach(line => line.classList.remove('active', 'prev', 'next'));
+      lyricsWrapper.style.transform = 'translateY(0)';
+    });
+  });
+}
+// Video Background Music Control
+function initVideoControls() {
+    // Find all video elements in the page
+    const videos = document.querySelectorAll('.styled-video');
+    
+    videos.forEach(video => {
+        // Pause background music when video plays
+        video.addEventListener('play', () => {
+            if (bgMusic) {
+                bgMusic.pause();
+            }
+        });
+        
+        // Resume background music when video pauses
+        video.addEventListener('pause', () => {
+            if (bgMusic) {
+                bgMusic.play();
+            }
+        });
+        
+        // Resume background music when video ends
+        video.addEventListener('ended', () => {
+            if (bgMusic) {
+                bgMusic.play();
+            }
+        });
+    });
+}
+
+// Red Thread Animation Enhancement
+document.addEventListener('DOMContentLoaded', function() {
+    const threadSection = document.querySelector('.red-thread-section');
+    
+    if (threadSection) {
+        // Add extra sparkle effect when section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    createThreadSparkles();
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(threadSection);
+    }
+    
+    function createThreadSparkles() {
+        const container = document.querySelector('.thread-container');
+        if (!container) return;
+        
+        for (let i = 0; i < 20; i++) {
+            setTimeout(() => {
+                const sparkle = document.createElement('div');
+                sparkle.style.position = 'absolute';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.fontSize = '20px';
+                sparkle.textContent = '✨';
+                sparkle.style.opacity = '0';
+                sparkle.style.transition = 'all 1s ease-out';
+                sparkle.style.pointerEvents = 'none';
+                
+                container.style.position = 'relative';
+                container.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.style.opacity = '1';
+                    sparkle.style.transform = 'translateY(-30px) scale(1.5)';
+                }, 10);
+                
+                setTimeout(() => {
+                    sparkle.style.opacity = '0';
+                    setTimeout(() => sparkle.remove(), 1000);
+                }, 1000);
+            }, i * 100);
+        }
+    }
+});
+
+
+</script>
+<audio id="bgMusic" loop>
+    <source src="background-song.mp3" type="audio/mpeg">
+</audio>
