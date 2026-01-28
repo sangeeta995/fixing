@@ -424,8 +424,10 @@ body.book-open .moon {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: auto;
+    width: 90%;
+    max-width: 400px;
     height: auto;
+    max-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -455,16 +457,19 @@ body.book-open .moon {
     cursor: pointer;
     position: relative;
     display: inline-block;
+    width: 100%;
+    max-width: 320px;
 }
 .book {
-    width: 320px;
-    height: 450px;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 320 / 450;
+    height: auto;
     position: relative;
-    margin: 0;
+    margin: 0 auto;
     transform-style: preserve-3d;
     transform: translateZ(0);
     overflow: visible;
-
 }
 
 
@@ -682,7 +687,8 @@ body.book-open .moon {
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
     backface-visibility: hidden;
     transition: transform 1.2s ease;
-    display: block;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     overflow-y: auto;
     overflow-x: hidden;
@@ -696,11 +702,13 @@ body.book-open .moon {
 }
 .page-content {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    height: auto;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
-
 .page.turn {
     transform: rotateY(-180deg) translateZ(1px);
 }
@@ -742,6 +750,12 @@ body.book-open .moon {
     padding: 30px;
     overflow-y: auto;
     display: block;
+    height: 100%;
+    position: relative;
+}
+
+.reasons-page .page-content {
+    min-height: 100%;
 }
 
 .reasons-page::-webkit-scrollbar {
@@ -783,10 +797,87 @@ body.book-open .moon {
     .header h1 { font-size: 2.5em; }
     .moon { width: 80px; height: 80px; right: 20px; top: 50px; }
     .gifts-grid { grid-template-columns: 1fr; }
-    .book { width: 280px; height: 400px; }
-    .cover { font-size: 60px; }
-    .page { padding: 25px; font-size: 1em; }
-    .close-btn { right: 15px; top: 15px; font-size: 40px; }
+    
+    .modal-content {
+        width: 95%;
+        max-width: 100%;
+        height: auto;
+        max-height: 85vh;
+    }
+    
+    .book-scene {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .book { 
+        width: 280px;
+        height: 400px;
+        max-width: 90vw;
+        aspect-ratio: 7 / 10;
+    }
+    
+    .cover { 
+        font-size: 50px;
+    }
+    
+    .page { 
+        padding: 15px;
+        font-size: 0.85em;
+    }
+    
+    .page-content {
+        min-height: 400px;
+        height: auto;
+    }
+    
+    .video-page {
+        min-height: 400px;
+        padding: 20px 15px;
+    }
+    
+    .video-wrapper {
+        max-width: 240px;
+    }
+    
+    .close-btn { 
+        right: 10px;
+        top: 10px;
+        font-size: 35px;
+    }
+    
+    .book-hint {
+        font-size: 1em;
+        bottom: -60px;
+    }
+    
+    .reason-item {
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .reason-text {
+        font-size: 0.85em;
+    }
+    
+    .reasons-page .page-content {
+        min-height: 400px;
+    }
+    
+    /* Fix for Seedhe Maut player on mobile */
+    .seedhe-maut-player {
+        padding: 20px 15px;
+        min-height: 400px;
+    }
+    
+    .seedhe-maut-player .album-art {
+        max-width: 150px;
+    }
+    
+    .seedhe-maut-player .lyrics-container {
+        height: 120px;
+        padding: 15px;
+    }
 }
 .seedhe-maut-player {
   background: linear-gradient(135deg, #1e1e1e 0%, #121212 100%);
@@ -1116,7 +1207,8 @@ body.book-open .moon {
 /* Video Page Styling */
 .video-page {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
