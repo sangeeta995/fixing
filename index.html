@@ -689,9 +689,6 @@ body.book-open .moon {
     transform: rotateY(0deg) translateZ(1px);
     scrollbar-width: none;
     -ms-overflow-style: none;
-     backface-visibility: hidden;
-    transform-style: preserve-3d;
-    overflow: hidden;
 }
 
 .page::-webkit-scrollbar {
@@ -743,26 +740,9 @@ body.book-open .moon {
 
 .reasons-page {
     padding: 30px;
-    height: 100%;
-    max-height: 100%;
     overflow-y: auto;
-    overflow-x: hidden;
     display: block;
-    -webkit-overflow-scrolling: touch;
-    isolation: isolate;
-    background: linear-gradient(#ffecec, #fff6f6);
 }
-
-.reasons-page > * {
-    position: relative;
-}
-.reasons-page::after {
-    content: "";
-    display: block;
-    height: 40px;
-}
-
-
 
 .reasons-page::-webkit-scrollbar {
     width: 8px;
@@ -784,9 +764,6 @@ body.book-open .moon {
     border-radius: 10px;
     border-left: 4px solid #e74c3c;
     text-align: left;
-        position: relative;
-    will-change: transform;
-    z-index: 1;
 }
 
 .reason-number {
