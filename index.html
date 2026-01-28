@@ -457,15 +457,14 @@ body.book-open .moon {
     display: inline-block;
 }
 .book {
-    width: 85vw;
-    max-width: 400px;
-    height: 80vh;
-    max-height: 600px;
+    width: 320px;
+    height: 450px;
     position: relative;
     margin: 0;
     transform-style: preserve-3d;
     transform: translateZ(0);
     overflow: visible;
+
 }
 
 
@@ -677,7 +676,7 @@ body.book-open .moon {
     border-radius: 15px;
     transform-origin: left center;
     padding: 0;
-    font-size: clamp(0.85em, 2.5vw, 1.2em);
+    font-size: 1.2em;
     line-height: 1.8;
     color: #2c3e50;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
@@ -700,9 +699,6 @@ body.book-open .moon {
     height: 100%;
     margin: 0;
     padding: 0;
-        overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
 }
 
 .page.turn {
@@ -794,95 +790,14 @@ body.book-open .moon {
     line-height: 1.5;
 }
 
-
 @media (max-width: 768px) {
     .header h1 { font-size: 2.5em; }
     .moon { width: 80px; height: 80px; right: 20px; top: 50px; }
     .gifts-grid { grid-template-columns: 1fr; }
-    .book { 
-        width: 90vw; 
-        max-width: 420px;
-        height: 85vh; 
-        max-height: 700px;
-    }
-    .cover { font-size: 50px; }
-    .page { 
-        padding: 15px; 
-        font-size: 0.9em; 
-    }
+    .book { width: 280px; height: 400px; }
+    .cover { font-size: 60px; }
+    .page { padding: 25px; font-size: 1em; }
     .close-btn { right: 15px; top: 15px; font-size: 40px; }
-    
-    .page-content {
-        padding: 10px;
-    }
-    
-    .page-content > div {
-        padding: 15px !important;
-        font-size: 1em !important;
-    }
-    
-    .page-content img {
-        max-height: 40vh !important;
-        width: auto !important;
-    }
-    
-    .reason-item {
-        padding: 10px;
-        margin-bottom: 8px;
-        font-size: 0.85em;
-    }
-    
-    .reason-number {
-        font-size: 0.9em;
-    }
-    
-    .reason-text {
-        font-size: 0.85em;
-        line-height: 1.4;
-    }
-    
-    .video-wrapper {
-        max-width: 85% !important;
-    }
-    
-    .video-header {
-        font-size: 1.2em;
-        margin-bottom: 15px;
-    }
-    
-    .video-caption {
-        font-size: 0.9em;
-        margin-top: 15px;
-    }
-    
-    .seedhe-maut-player {
-        padding: 20px 15px !important;
-    }
-    
-    .seedhe-maut-player .album-art {
-        max-width: 160px !important;
-    }
-    
-    .seedhe-maut-player .track-name {
-        font-size: 1.1em !important;
-    }
-    
-    .seedhe-maut-player .artist-name {
-        font-size: 0.9em !important;
-    }
-    
-    .seedhe-maut-player .lyrics-container {
-        height: 160px !important;
-        padding: 15px 10px !important;
-        margin-top: 15px !important;
-    }
-    
-    .seedhe-maut-player .lyrics-line {
-        font-size: 0.85em !important;
-        line-height: 1.8 !important;
-        padding: 6px 0 !important;
-        min-height: 40px !important;
-    }
 }
 .seedhe-maut-player {
   background: linear-gradient(135deg, #1e1e1e 0%, #121212 100%);
